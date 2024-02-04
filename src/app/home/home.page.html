@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Ionic SQLite Example </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-label>{{ item.name }}</ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="editItem(item.id)">Edit</ion-button>
+        <ion-button (click)="deleteItem(item.id)">Delete</ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <ion-input [(ngModel)]="newItem" placeholder="New Item"></ion-input>
+    <ion-button expand="full" (click)="addItem()">Add Item</ion-button>
+  </ion-item>
+</ion-content>
